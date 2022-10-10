@@ -1,3 +1,3 @@
 # LuckyDuck
 
-Projekt arbete utfört av Maria, Hourse, Simon och Oskar.
+Projekt arbete utfört av Maria, Houre, Simon och Oskar.
