@@ -1,12 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Lucky Duck</title>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Grund för meny-->
-</body>
+    <!--div för flexbox för hela sidan-->
+    <div class="entire-content">
+        <!--div för checkbox/preferensval för användare-->
+      <div class="preference-check">
+        <fieldset>
+            <legend class="legend-text">Välj dina preferenser</legend>
+          <div class="checkboxes">
+            <input type="checkbox" name="Gluten" id="gluten" />
+            <label for="gluten">Glutenfritt</label>
+          </div>
+          <div>
+            <input type="checkbox" name="Nötallergi" id="nötter" />
+            <label for="nötter">Nötallergi</label>
+          </div>
+          <div class="checkboxes">
+            <input type="checkbox" name="Fisk" id="fisk" />
+            <label for="fisk">Fisk</label>
+          </div>
+          <div class="checkboxes">
+            <input type="checkbox" name="Kött" id="kött" />
+            <label for="kött">Kött</label>
+          </div>
+          <div class="checkboxes">
+            <input type="checkbox" name="Vegan" id="vegan" />
+            <label for="vegan">Veganskt</label>
+          </div>
+        </fieldset>
+        <!--knapp för trycka på för få upp sin egenskapade meny-->
+        <button class="custom-menu">Din egna meny</button>
+      </div>
+      <!--Div för hela menyn-->
+      <div class="main-menu">
+        <div class="upper-menu">
+            <div class="upper-inner">
+                <img src="bilder/lucky_duck.png" alt="luckyduck">
+                <button>Efterätter</button>
+            </div>
+            <div class="upper-inner">
+                <h3>Förrätter</h3>
+                <ul>
+                    <li>Förrätt 1</li>
+                    <li>Förrätt 2</li>
+                    <li>Förrätt 2</li>
+                    <li>Förrätt 2</li>
+                    <li>Förrätt 2</li>
+                </ul>
+            </div>
+        </div>
+      </div>
+
+    </div>
+  </body>
 </html>
