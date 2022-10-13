@@ -1,12 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Lucky Duck</title>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Grund för meny-->
-</body>
+    <!--div för flexbox för hela sidan-->
+    <div class="entire-content">
+        <!--div för checkbox/preferensval för användare-->
+      <div class="preference-check">
+        <fieldset>
+            <legend class="legend-text">Välj dina preferenser</legend>
+          <div class="checkboxes">
+            <input type="checkbox" name="Gluten" id="gluten" />
+            <label for="gluten">Glutenfritt</label>
+          </div>
+          <div>
+            <input type="checkbox" name="Nötallergi" id="nötter" />
+            <label for="nötter">Nötallergi</label>
+          </div>
+          <div class="checkboxes">
+            <input type="checkbox" name="Fisk" id="fisk" />
+            <label for="fisk">Fisk</label>
+          </div>
+          <div class="checkboxes">
+            <input type="checkbox" name="Kött" id="kött" />
+            <label for="kött">Kött</label>
+          </div>
+          <div class="checkboxes">
+            <input type="checkbox" name="Vegan" id="vegan" />
+            <label for="vegan">Veganskt</label>
+          </div>
+        </fieldset>
+        <!--knapp för trycka på för få upp sin egenskapade meny-->
+        <button class="custom-menu">Din egna meny</button>
+      </div>
+      <!--Div för hela menyn-->
+      <div class="entire-menu">
+        <!--Div för övre halvan i syfte med flexbox-->
+        <div class="upper-menu">
+            <!--ytterligare divs för att kunna styra hur flexbox items ska agera i varje div-->
+            <div class="upper-inner">
+                <img src="bilder/lucky_duck.png" alt="luckyduck">
+                <button>Efterätter</button>
+            </div>
+            <div class="upper-inner">
+                <h3>Förrätter</h3>
+                <ul>
+                    <li>Förrätt 1</li>
+                    <li>Förrätt 2</li>
+                    <li>Förrätt 2</li>
+                    <li>Förrätt 2</li>
+                    <li>Förrätt 2</li>
+                </ul>
+            </div>
+        </div>
+        <!--div för värderingstext (kan lägga till bilder här sen)-->
+        <div class="our-values">
+            <p>Vårt mål är att ge dig som besökare en god stund med god mat. </p>
+        </div>
+      </div>
+        <!--ytterligare divs för att kunna styra hur flexbox items ska agera i varje div-->
+      <div class="main-courses">
+        <div class="full-courses">
+            <h3>Huvudrätter - Kött</h3>
+            <ul>
+                <li>Kött</li>
+                <li>Kött</li>
+                <li>Kött</li>
+                <li>Kött</li>
+                <li>Kött</li>
+            </ul>
+        </div>
+        <div class="full-courses">
+            <h3>Huvudrätter - Fisk</h3>
+            <ul>
+                <li>Fisk</li>
+                <li>Fisk</li>
+                <li>Fisk</li>
+                <li>Fisk</li>
+                <li>Fisk</li>
+            </ul>
+        </div>
+        <div class="full-courses">
+            <h3>Huvudrätter - Vegetariskt</h3>
+            <ul>
+                <li>Veg</li>
+                <li>Veg</li>
+                <li>Veg</li>
+                <li>Veg</li>
+                <li>Veg</li>
+            </ul>
+        </div>
+      </div>
+      <!--Div för tillbehör längst ner i menyn-->
+      <div class="sidedishes">
+        <h3>Tillbehör</h3>
+        <ul>
+            <li>Tillbehör</li>
+            <li>Tillbehör</li>
+            <li>Tillbehör</li>
+            <li>Tillbehör</li>
+        </ul>
+      </div>
+
+    </div>
+  </body>
 </html>
