@@ -11,34 +11,20 @@
     <!-- Grund för meny-->
     <!--div för flexbox för hela sidan-->
     <div class="entire-content">
-      <h1>Lucky Duck</h1>
+      <h1 class="company-name">Lucky Duck <img src="./bilder/duck.png" alt="happyduck"></h1>
       <!--div för checkbox/preferensval för användare-->
       <div class="preference-check">
-        <fieldset>
-          <legend class="legend-text">Välj dina preferenser</legend>
-          <div class="checkboxes">
-            <input type="checkbox" name="Gluten" id="gluten" />
-            <label for="gluten">Glutenfritt</label>
+        <div class="allergyCard"> 
+          <h4>KLICKA I ALLERGIER</h4>
+          <div class="allergy" id="nuts">Nötter</div>
+          <div class="allergy" id="gluten">Gluten</div>
+          <div class="allergy" id="fish">Fisk</div>
+              <div class="allergy" id="soy">Soja</div>
+              <div class="allergy" id="lactose">Laktos</div>
           </div>
-          <div class="checkboxes">
-            <input type="checkbox" name="Nötallergi" id="nötter" />
-            <label for="nötter">Nötallergi</label>
-          </div>
-          <div class="checkboxes">
-            <input type="checkbox" name="Vegan" id="vegan" />
-            <label for="vegan">Veganskt</label>
-          </div>
-          <div class="checkboxes">
-            <input type="checkbox" name="Fisk" id="fisk" />
-            <label for="fisk">Fisk</label>
-          </div>
-          <div class="checkboxes">
-            <input type="checkbox" name="Kött" id="kött" />
-            <label for="kött">Kött</label>
-          </div>
-        </fieldset>
         <!--knapp för trycka på för få upp sin egenskapade meny-->
-        <button class="myButton">Din egna meny</button>
+        <!--Särsiljer knapparna med att lägga till class-->
+        <button class="myButton menu-button">Din egna meny</button>
       </div>
       <!--Div för hela menyn-->
       <div class="entire-menu">
@@ -46,8 +32,8 @@
         <div class="upper-menu">
           <!--ytterligare divs för att kunna styra hur flexbox items ska agera i varje div-->
           <div class="upper-left">
-            <img src="bilder/lucky_duck.png" alt="luckyduck" />
-            <button class="myButton">Efterätter</button>
+            <img src="bilder/lucky_duck.png" alt="luckyduck"/>
+            <button class="myButton desert-button">Efterätter</button>
           </div>
           <div class="upper-inner">
             <h3>Förrätter</h3>
