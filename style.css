@@ -98,21 +98,25 @@ fieldset {
 .entire-menu{
     display:flex;
     flex-direction: column;
+    flex-wrap: wrap;
 }
 .upper-menu{
     display:flex;
     flex-direction: row;
     align-items: center;
+    flex-wrap: wrap;
     
 }
 .upper-left{
     display:flex;
     flex-direction: column;
+    flex-wrap: wrap;
 }
 .upper-inner{
     display:flex;
     flex-direction: column;
     padding-left:37%;
+    flex-wrap: wrap;
 }
 .our-values{
     text-align: center;
@@ -122,6 +126,7 @@ fieldset {
 .main-courses{
     display: flex;
     align-items: center;
+
 }
 .full-courses{
     padding:20px 40px ;
@@ -135,4 +140,5 @@ fieldset {
     flex-direction: column;
     justify-content: center;
     padding-right:50px;
+    flex-wrap: wrap;
 }
