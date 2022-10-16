@@ -218,12 +218,16 @@ async function customMenu() {
     main = [];
     starters = [];
     
+    //hämtar element
     let refreshStarters = document.querySelector('.upper-inner');
     let refreshMains = document.querySelector('.full-courses');
     let refreshDesert = document.querySelector('.desert');
+
+    //Delar upp i sektioner
     sectionDivider();
-   
+   // Kollar om content redan är aktivt.
     if(alreadyDisplayed){
+        //Återställ content, annars dubbleras den.
         refreshDesert.replaceChildren();
         refreshStarters.replaceChildren();
         refreshMains.replaceChildren();
