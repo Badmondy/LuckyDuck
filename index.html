@@ -5,26 +5,51 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <!-- Kit code från font awsome-->
+    <script
+      src="https://kit.fontawesome.com/5605743a65.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Lucky Duck</title>
   </head>
+  
   <body>
+    
+      
+    <!--BACKDROP-->
+    
     <!-- Grund för meny-->
     <!--div för flexbox för hela sidan-->
     <div class="entire-content">
-      <h1 class="company-name">Lucky Duck <img src="./bilder/duck.png" alt="happyduck"></h1>
+      <div id="backdrop">
+        <div id="info">
+          <p>Vill du få hela menyn?</p>
+          <button id="backdrop-Btn">Ja</button>
+          <button id="removeBackDrop-Btn">Nej</button>
+          
+        </div>
+      </div>
+      <h1 class="company-name">
+        Lucky Duck
+        <img src="./bilder/duck.png" alt="happyduck" />
+      </h1>
       <!--div för checkbox/preferensval för användare-->
       <div class="preference-check">
-        <div class="allergyCard"> 
+        <div class="allergyCard">
           <h4>KLICKA I ALLERGIER</h4>
           <div class="allergy" id="nuts">Nötter</div>
           <div class="allergy" id="gluten">Gluten</div>
           <div class="allergy" id="fish">Fisk</div>
-              <div class="allergy" id="soy">Soja</div>
-              <div class="allergy" id="lactose">Laktos</div>
-          </div>
+          <div class="allergy" id="soy">Soja</div>
+          <div class="allergy" id="lactose">Laktos</div>
+        </div>
         <!--knapp för trycka på för få upp sin egenskapade meny-->
         <!--Särsiljer knapparna med att lägga till class-->
-        <button class="myButton menu-button">Din egna meny</button>
+        <button class="myButton menu-button" id="custom-Btn">
+          Din egna meny
+        </button>
+        <button class="myButton menu-button" id="wholeMenu-Btn"> Visa hela menyn</button>
+       
       </div>
       <!--Div för hela menyn-->
       <div class="entire-menu">
@@ -32,70 +57,50 @@
         <div class="upper-menu">
           <!--ytterligare divs för att kunna styra hur flexbox items ska agera i varje div-->
           <div class="upper-left">
-            <img src="bilder/lucky_duck.png" alt="luckyduck"/>
+            <img src="bilder/lucky_duck.png" alt="luckyduck" />
             <button class="myButton desert-button">Efterätter</button>
+    
+            </div>
+
+          <!-- Vårat motto-->
+          <div class="our-values">
+            <p>Vårt mål är att ge dig som besökare en god stund med god mat.</p>
+            <p>
+              <i class="fa-solid fa-tree"></i>
+              <i class="fa-solid fa-tree"></i>
+              <i class="fa-solid fa-tree"></i>
+              <i class="fa-solid fa-tree"></i>
+              - Räddas varje år tack vare den digitala menyn
+            </p>
           </div>
-          <div class="upper-inner">
-            <h3>Förrätter</h3>
-            <ul>
-              <li>Förrätt 1</li>
-              <li>Förrätt 2</li>
-              <li>Förrätt 2</li>
-              <li>Förrätt 2</li>
-              <li>Förrätt 2</li>
-            </ul>
+          <!-- En wrapper för att kontrollera innehåll i förätter-->
+          <div class="upper-inner-wrapper">
+            <h4>Förätter</h4>
+            <div class="upper-inner"></div>
           </div>
-        </div>
-        <!--div för värderingstext (kan lägga till bilder här sen)-->
-        <div class="our-values">
-          <p>Vårt mål är att ge dig som besökare en god stund med god mat.</p>
         </div>
 
         <!--ytterligare divs för att kunna styra hur flexbox items ska agera i varje div-->
+        <!--Huvudrätter sektion-->
         <div class="main-courses">
+          
           <div class="full-courses">
-            <h3>Huvudrätter - Kött</h3>
-            <ul>
-              <li>Kött</li>
-              <li>Kött</li>
-              <li>Kött</li>
-              <li>Kött</li>
-              <li>Kött</li>
-            </ul>
+          
+            
           </div>
-          <div class="full-courses">
-            <h3>Huvudrätter - Fisk</h3>
-            <ul>
-              <li>Fisk</li>
-              <li>Fisk</li>
-              <li>Fisk</li>
-              <li>Fisk</li>
-              <li>Fisk</li>
-            </ul>
-          </div>
-          <div class="full-courses">
-            <h3>Huvudrätter - Vegetariskt</h3>
-            <ul>
-              <li>Veg</li>
-              <li>Veg</li>
-              <li>Veg</li>
-              <li>Veg</li>
-              <li>Veg</li>
-            </ul>
-          </div>
+          <h4>Huvudrätter</h4>
         </div>
         <!--Div för tillbehör längst ner i menyn-->
-        <div class="sidedishes">
-          <h3>Tillbehör</h3>
-          <ul>
-            <li>Tillbehör</li>
-            <li>Tillbehör</li>
-            <li>Tillbehör</li>
-            <li>Tillbehör</li>
-          </ul>
+        <div class="desert-wrapper">
+          <h4>Efterrätter <i class="fa-solid fa-cookie-bite"></i></h4>
+        <div class="desert">
+         
         </div>
+       
+      </div>
       </div>
     </div>
+
     <script src="main.js"></script>
   </body>
 </html>
