@@ -6,7 +6,10 @@ let restrictAllergies = [];
 
 // Array, för allergier som ska tas bort från menyn.
 let toVanish = [];
-
+//Sorterade priser
+let sortedPrices = [];
+let sortedClicked = false;
+let sortedAsc = false;
 // Denier
 let alreadyDisplayed = false;
 let isActive = false;
@@ -29,6 +32,8 @@ window.onload = async function() {
 }
 
 // Hämtar element
+const priceSortBtn = document.getElementById('priceSorter');
+const priceSortBtnAsc = document.getElementById('priceSorterAsc');
 const nutsBtn = document.getElementById('nuts');
 const glutenBtn = document.getElementById('gluten');
 const fishBtn = document.getElementById('fish');
@@ -64,16 +69,38 @@ backdropNo.addEventListener('click', () =>{
 });
 
 
-
+// Din egna meny
 customBtn.addEventListener('click', customMenu);
 
+
+// Laddar om från början, "visa hela menyn".
 showFullMenu.addEventListener('click', () => {
 
 
     window.location.reload();
 });
 
+// hämtar knapparna 
 
+let ascBtnColor = document.querySelector('.asc');
+let descBtnColor = document.querySelector('.desc');
+
+
+priceSortBtn.addEventListener('click', () => {
+    ascBtnColor.style.backgroundColor = 'red';
+    descBtnColor.style.backgroundColor = 'white';
+    console.log('Cliked 1');
+    priceSortActive();
+    customMenu();
+});
+
+priceSortBtnAsc.addEventListener('click', () => {
+    descBtnColor.style.backgroundColor = 'red';
+    ascBtnColor.style.backgroundColor = 'white';
+    console.log('clicked 2');
+    priceSortAsc();
+    customMenu();
+});
 
 nutsBtn.addEventListener('click', () => {
     if(!restrictAllergies.includes('nuts')){
@@ -152,11 +179,17 @@ async function readJson() {
 
 }
 
+
+
+
+
+
 // Kollar allergier
 function allergyChecker() {
         // el är förkortning på element
         //kollar om användaren har lagt till något i restricallergies
         // letar sedan match i alla courses.
+
         for(const el in courses){
             if(restrictAllergies.some(item => courses[el].allergy.includes(item))) {
                 // Om det hittas skicka
@@ -176,6 +209,7 @@ function allergyChecker() {
      toVanish = [];
   
 }
+
 // Delar upp courses i sektioner.
 function sectionDivider(){
 
@@ -196,7 +230,19 @@ function sectionDivider(){
         }
     }
 }
+function priceSortActive(){
+    sortedClicked = true;
+    sortedAsc = false;
 
+    
+}
+
+function priceSortAsc(){
+    sortedAsc = true;
+    sortedClicked = false;
+
+   
+}
 async function customMenu() {
 
     // Tar bort allergier
@@ -214,6 +260,10 @@ async function customMenu() {
 
     //Delar upp i sektioner
     sectionDivider();
+    sorterWhichOne();
+   
+    
+   
    // Kollar om content redan är aktivt.
     if(alreadyDisplayed){
         //Återställ content, annars dubbleras den.
@@ -224,10 +274,28 @@ async function customMenu() {
   
     }else{
         
-        displayMenu();
+     displayMenu(); 
     }
     //Återställer färger
    /*  changeToDefualt(); */
+
+}
+
+function priceSorter() {
+    
+    let sorter;
+  sorter = courses.sort((a,b) => (a.price) > b.price ? 1 :-1);  
+
+
+   
+}
+
+function priceSorterAsc(){
+   let sorter;
+
+   sorter = courses.sort((b,a) => (b.price) > a.price ? -1 :1 );
+
+   
 
 }
 
@@ -235,9 +303,19 @@ function clearOldData(){
     let starterDelete = document.querySelector('.upper-inner');
     starterDelete.replaceChildren();
 }
+function sorterWhichOne(){
+    if(sortedClicked && sortedAsc === false){
+        priceSorter();
+    }else if(sortedAsc && sortedClicked === false){
+        priceSorterAsc();
+    }
+    else{
+        return console.log('inget av dem');
+    }
+}
 
-
-function displayMenu(){
+async function displayMenu(){
+ 
    
    // Sätter boolena att användaren redan använt menyn.
     alreadyDisplayed = true;
@@ -336,6 +414,9 @@ function displayMenu(){
         listAllergy.innerHTML = `${desert[item].allergy}`;
         listPrice.innerHTML = `${desert[item].price} kr`;
 
+
+
+      
 
         // Tilldelar CCS-klasser
         listRubric.classList = 'course-rubric';

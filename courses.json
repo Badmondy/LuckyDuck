@@ -5,7 +5,7 @@
         "desc": "Lokala råvaror från Hembyggdens gård med slungad klyftpotatis samt säsongens primörer",
         "allergy": "nuts",
         "section":"main",
-        "price":"310"
+        "price": 310
     },
  
     {
@@ -14,7 +14,7 @@
         "desc": "250gram angus beef, med klyftpotatis med husets sås",
         "allergy": "soy",
         "section":"main",
-        "price":"275"
+        "price": 275
     },
     
 
@@ -24,7 +24,7 @@
         "desc": "Hasselbackspotatis med havsalt samt säsongens primörer",
         "allergy": "fish",
         "section":"main",
-        "price":"198"
+        "price": 198
     },
     {
         "id": 4,
@@ -32,7 +32,7 @@
         "desc": "Brödet är bakat hos oss med linser odlade i våran trädgård",
         "allergy": "gluten",
         "section": "main",
-        "price":"189"
+        "price": 189
     },
     {
         "id":5,
@@ -40,7 +40,7 @@
         "desc": "Med potatis och tomat med en kall sallad till",
         "allergy": "",
         "section": "main",
-        "price": "120"
+        "price": 120
     },
     {
         "id":6,
@@ -48,7 +48,7 @@
         "desc": "Vaniljglass och nyplockade bär",
         "allergy": "gluten",
         "section": "desert",
-        "price":"99"
+        "price": 99
     },
 
     {
@@ -57,7 +57,7 @@
         "desc" : "Sprinklad med rostade hasselnötter",
         "allergy": "nuts",
         "section": "desert",
-        "price": "110"
+        "price": 110
 
     },
 
@@ -67,7 +67,7 @@
         "desc": "Färska bär och extra crunch",
         "allergy": "",
         "section": "desert",
-        "price": "110"
+        "price": 110
 
     },
     {
@@ -76,7 +76,7 @@
         "desc": "Morötter plockade i våran trädgård fri från gluten",
         "allergy": "nuts",
         "section": "desert",
-        "price": "99"
+        "price": 99
     },
     {
         "id": 10,
@@ -84,7 +84,7 @@
         "desc": "Ekologiskt odlade rödbeter med krämig chevré från Hallands mejeri",
         "allergy":"nuts",
         "section":"starters",
-        "price":"115"
+        "price": 115
     },
     {
         "id": 11,
@@ -92,7 +92,7 @@
         "desc": "Fylld med alla havets läckerheter",
         "allergy": "fish",
         "section": "starters",
-        "price": "150"
+        "price": 150
     },
     {
         "id":12,
@@ -100,7 +100,7 @@
         "desc": "Handplockad svamp serveras med nybakat bröd",
         "allergy": "",
         "section":"starters",
-        "price": "99"
+        "price": 99
     },
     {
         "id": 13,
@@ -108,7 +108,7 @@
         "desc": "Hemmbakade flarn med mjöl från granngården",
         "allergy": "gluten",
         "section": "desert",
-        "price": "99"
+        "price": 99
     },
     {
         "id": 14,
@@ -116,7 +116,7 @@
         "desc": "Vedugnsbakat bröd med säsongens kantareller",
         "allergy": "gluten",
         "section": "starters",
-        "price": "110"
+        "price": 110
 
     },
     {
@@ -125,7 +125,7 @@
         "desc": "Säsongens kantareller med egenodlad dill",
         "allergy": "soy",
         "section": "starters",
-        "price": "100"
+        "price": 100
     }
  
 ]
