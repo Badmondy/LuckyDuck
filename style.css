@@ -219,6 +219,7 @@ body {
   align-items: center;
   box-shadow: inset  rgba(0, 0, 0, 0.24) 0px 3px 8px;
   
+  
 }
 .full-courses {
   align-self:center;
@@ -231,7 +232,8 @@ body {
   text-orientation: upright;
   font-size: 200%;
   font-weight: 400;
-  padding:1%;
+  margin:0;
+  margin-left:20%;
   text-transform: uppercase;
 }
 

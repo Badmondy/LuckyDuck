@@ -52,13 +52,13 @@ const buttonDefaultColor = "#FFFFFF";
 
 
 // Backdrop-btn
-backdropYes.addEventListener('click', function(){
+backdropYes.addEventListener('click', () => {
     console.log('yes');
     backdrop.style.display = "none";
     displayMenu();
     
 });
-backdropNo.addEventListener('click', function(){
+backdropNo.addEventListener('click', () =>{
     console.log('no');
     backdrop.style.display = "none";
 });
@@ -67,13 +67,15 @@ backdropNo.addEventListener('click', function(){
 
 customBtn.addEventListener('click', customMenu);
 
-showFullMenu.addEventListener('click', function(){
+showFullMenu.addEventListener('click', () => {
 
 
     window.location.reload();
 });
 
-nutsBtn.addEventListener('click',  function () {
+
+
+nutsBtn.addEventListener('click', () => {
     if(!restrictAllergies.includes('nuts')){
         restrictAllergies.push('nuts');
     }
@@ -82,7 +84,7 @@ nutsBtn.addEventListener('click',  function () {
 
 });
 
-glutenBtn.addEventListener('click', function () {
+glutenBtn.addEventListener('click', () => {
     
     if(!restrictAllergies.includes('gluten')){
         restrictAllergies.push('gluten');
@@ -91,7 +93,7 @@ glutenBtn.addEventListener('click', function () {
     glutenBtn.style.backgroundColor = buttonOnClickColor;
 });
 
-fishBtn.addEventListener('click', function () {
+fishBtn.addEventListener('click', () => {
     if(!restrictAllergies.includes('fish')){
         restrictAllergies.push('fish');
     }
@@ -99,7 +101,7 @@ fishBtn.addEventListener('click', function () {
     fishBtn.style.backgroundColor = buttonOnClickColor;
 });
 
-soyBtn.addEventListener('click', function () {
+soyBtn.addEventListener('click',  () => {
     if(!restrictAllergies.includes('soy')){
         restrictAllergies.push('soy');
     }
@@ -108,7 +110,7 @@ soyBtn.addEventListener('click', function () {
    
 });
 
-lactoseBtn.addEventListener('click', function () {
+lactoseBtn.addEventListener('click', () => {
     if(!restrictAllergies.includes('lactose')){
         restrictAllergies.push('lactose');
     }
@@ -150,29 +152,31 @@ async function readJson() {
 
 }
 
-
 // Kollar allergier
 function allergyChecker() {
-        
+        // el är förkortning på element
+        //kollar om användaren har lagt till något i restricallergies
+        // letar sedan match i alla courses.
         for(const el in courses){
             if(restrictAllergies.some(item => courses[el].allergy.includes(item))) {
-                
+                // Om det hittas skicka
               toVanish.push(courses[el]);
             } 
     }
+
+    //loopa igenom vad som ska tas bort och ta bort föremål på index.
      toVanish.forEach(element => {
         let index = courses.indexOf(element);
 
         courses.splice(index,1);
      })
+
+     // Återställer obejekt i arrays, annars dubbleras dem.
      restrictAllergies = [];
      toVanish = [];
   
 }
-
-
-       
-   
+// Delar upp courses i sektioner.
 function sectionDivider(){
 
     for(const item in courses){
@@ -187,30 +191,15 @@ function sectionDivider(){
         else if(courses[item].section == 'desert'){
             desert.push(courses[item]);
         }
-        else if(courses[item].section == 'starters2'){
-            starters2.push(courses[item]);
-        }
         else{
             console.log('NO SECTION');
         }
     }
 }
 
-
-
-    
-
-
-
-
 async function customMenu() {
 
- 
-   
-
     // Tar bort allergier
-   /*  allergyChecker(); */
-    
     allergyChecker();
     //Nollställer sektions!
     sides = [];
@@ -237,18 +226,6 @@ async function customMenu() {
         
         displayMenu();
     }
-    
-
-    
-
-    
-    
-   
-   
-    
-    // Efter allergier är kollat återställ courses
-    
-   
     //Återställer färger
    /*  changeToDefualt(); */
 
@@ -261,9 +238,11 @@ function clearOldData(){
 
 
 function displayMenu(){
-    //Hämtar div
    
+   // Sätter boolena att användaren redan använt menyn.
     alreadyDisplayed = true;
+
+     //Hämtar div
     let starterCourses = document.querySelector('.upper-inner');
     
    
@@ -273,7 +252,7 @@ function displayMenu(){
 
     
   
-
+    // Loopar igenom alla maträtter i starters
     for(const item in starters){
 
         var listRubric = document.createElement('li');
@@ -300,7 +279,7 @@ function displayMenu(){
         starterList.appendChild(listPrice);
 
     }
-
+    //Slutligen sänder till hemsidan
     starterCourses.appendChild(starterList);
 
 
@@ -309,7 +288,7 @@ function displayMenu(){
 
     let mainList = document.createElement('ul');
 
-
+    // Loopar igenom alla huvudrätter
     for(const item in main){
         var listRubric = document.createElement('li');
         var listDesc = document.createElement('li');
@@ -334,7 +313,7 @@ function displayMenu(){
         mainList.appendChild(listAllergy);
         mainList.appendChild(listPrice);
     }
-
+   //Slutligen sänder till hemsidan
     mainCourses.appendChild(mainList);
 
 
@@ -343,6 +322,8 @@ function displayMenu(){
 
     let desertList = document.createElement('ul');
 
+
+    // Loopar igenom alla eftersätter.
     for(const item in desert){
         var listRubric = document.createElement('li');
         var listDesc = document.createElement('li');
@@ -367,7 +348,7 @@ function displayMenu(){
         desertList.appendChild(listAllergy);
         desertList.appendChild(listPrice);
     }
-
+   //Slutligen sänder till hemsidan
     desertCourses.appendChild(desertList);
 }
 
