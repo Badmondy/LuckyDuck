@@ -1,101 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Lucky Duck</title>
-  </head>
-  <body>
-    <!-- Grund för meny-->
-    <!--div för flexbox för hela sidan-->
-    <div class="entire-content">
-      <h1 class="company-name">Lucky Duck <img src="./bilder/duck.png" alt="happyduck"></h1>
-      <!--div för checkbox/preferensval för användare-->
-      <div class="preference-check">
-        <div class="allergyCard"> 
-          <h4>KLICKA I ALLERGIER</h4>
-          <div class="allergy" id="nuts">Nötter</div>
-          <div class="allergy" id="gluten">Gluten</div>
-          <div class="allergy" id="fish">Fisk</div>
-              <div class="allergy" id="soy">Soja</div>
-              <div class="allergy" id="lactose">Laktos</div>
-          </div>
-        <!--knapp för trycka på för få upp sin egenskapade meny-->
-        <!--Särsiljer knapparna med att lägga till class-->
-        <button class="myButton menu-button">Din egna meny</button>
-      </div>
-      <!--Div för hela menyn-->
-      <div class="entire-menu">
-        <!--Div för övre halvan i syfte med flexbox-->
-        <div class="upper-menu">
-          <!--ytterligare divs för att kunna styra hur flexbox items ska agera i varje div-->
-          <div class="upper-left">
-            <img src="bilder/lucky_duck.png" alt="luckyduck"/>
-            <button class="myButton desert-button">Efterätter</button>
-          </div>
-          <div class="upper-inner">
-            <h3>Förrätter</h3>
-            <ul>
-              <li>Förrätt 1</li>
-              <li>Förrätt 2</li>
-              <li>Förrätt 2</li>
-              <li>Förrätt 2</li>
-              <li>Förrätt 2</li>
-            </ul>
-          </div>
-        </div>
-        <!--div för värderingstext (kan lägga till bilder här sen)-->
-        <div class="our-values">
-          <p>Vårt mål är att ge dig som besökare en god stund med god mat.</p>
-        </div>
 
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Lucky Duck</title>
+</head>
+
+<body>
+  <!-- Grund för meny-->
+  <!--div för flexbox för hela sidan-->
+  <div class="entire-content">
+    <h1 class="company-name">Lucky Duck <img src="./bilder/duck.png" alt="happyduck"></h1>
+    <!--div för checkbox/preferensval för användare-->
+    <div class="preference-check">
+      <div class="allergyCard">
+        <h4>KLICKA I ALLERGIER</h4>
+        <div class="allergy" id="nuts">Nötter</div>
+        <div class="allergy" id="gluten">Gluten</div>
+        <div class="allergy" id="fish">Fisk</div>
+        <div class="allergy" id="kött">Kött</div>
+        <div class="allergy" id="lactose">Laktos</div>
+      </div>
+      <!--knapp för trycka på för få upp sin egenskapade meny-->
+      
+    </div>
+    <!--Div för hela menyn-->
+    <div class="entire-menu">
+      <!--Div för övre halvan i syfte med flexbox-->
+      <div class="upper-menu">
         <!--ytterligare divs för att kunna styra hur flexbox items ska agera i varje div-->
-        <div class="main-courses">
-          <div class="full-courses">
-            <h3>Huvudrätter - Kött</h3>
-            <ul>
-              <li>Kött</li>
-              <li>Kött</li>
-              <li>Kött</li>
-              <li>Kött</li>
-              <li>Kött</li>
-            </ul>
-          </div>
-          <div class="full-courses">
-            <h3>Huvudrätter - Fisk</h3>
-            <ul>
-              <li>Fisk</li>
-              <li>Fisk</li>
-              <li>Fisk</li>
-              <li>Fisk</li>
-              <li>Fisk</li>
-            </ul>
-          </div>
-          <div class="full-courses">
-            <h3>Huvudrätter - Vegetariskt</h3>
-            <ul>
-              <li>Veg</li>
-              <li>Veg</li>
-              <li>Veg</li>
-              <li>Veg</li>
-              <li>Veg</li>
-            </ul>
-          </div>
+        <div class="upper-left">
+          <img src="bilder/lucky_duck.png" alt="luckyduck" />
+          <button class="myButton desert-button">Efterätter</button>
         </div>
-        <!--Div för tillbehör längst ner i menyn-->
-        <div class="sidedishes">
-          <h3>Tillbehör</h3>
+        <div class="upper-inner">
+          <h3>Förrätter</h3>
           <ul>
-            <li>Tillbehör</li>
-            <li>Tillbehör</li>
-            <li>Tillbehör</li>
-            <li>Tillbehör</li>
+            <li class="fisk">
+              <h3 class="precourse-head">Toast skagen</h3>
+              <p>Räkor, majonäs, dill, vitt vin m.m</p>
+              <p class="pris">69kr</p>
+            </li>
+            <li class="kött">
+              <h3 class="precourse-head">Råbiff</h3>
+              <p>Kalvinnelår, egengjorda potatischips</p>
+              <p class="pris">89kr</p>
+            </li>
+            <li class="fisk">
+              <h3 class="precourse-head">Avocado m. romsås</h3>
+              <p>Avocado, rom och dill</p>
+              <p class="pris">49kr</p>
+            </li>
+            <li class="veg nötter">
+              <h3 class="precourse-head">Halloumitapas</h3>
+              <p>Halloumi, tomater, oliver, nötter</p>
+              <p class="pris">49kr</p>
+            </li>
+            <li class="kött">
+              <h3 class="precourse-head">Baconlindade dadlar</h3>
+              <p>Bacon, dadlar</p>
+              <p class="pris">29kr</p>
+            </li>
           </ul>
         </div>
       </div>
+      <!--div för värderingstext (kan lägga till bilder här sen)-->
+      <div class="our-values">
+        <p>Vårt mål är att ge dig som besökare en god stund med god mat.</p>
+      </div>
+
+      <!--ytterligare divs för att kunna styra hur flexbox items ska agera i varje div-->
+      <div class="main-courses">
+        <div class="full-courses kött">
+          <h3>Huvudrätter - Kött</h3>
+          <ul>
+            <li>
+              <h3 class="precourse-head">Entrecote 250g</h3>
+              <p>Serveras med potatisgratäng och rödvinssås</p>
+              <p class="pris">199kr</p>
+            </li>
+            <li class="soja laktos">
+              <h3 class="precourse-head">Ryggbiff 250g</h3>
+              <p>Serveras med råstekt potatis och bearnaisesås (innehåller laktos och soja)</p>
+              <p class="pris">249kr</p>
+            </li>
+            <li class="nötter">
+              <h3 class="precourse-head">Lamm racks</h3>
+              <p>Serveras med råstekt potatis och tzatzika (innehåller nötter)</p>
+              <p class="pris">229kr</p>
+            </li>
+            <li class="laktos">
+              <h3 class="precourse-head">Högrevsburgare</h3>
+              <p>Serveras med pommes (innehåller laktos) </p>
+              <p class="pris">149kr</p>
+            </li>
+          </ul>
+        </div>
+        <div class="full-courses fisk">
+          <h3>Huvudrätter - Fisk</h3>
+          <ul>
+            <li class="laktos">
+              <h3 class="precourse-head">Torsrygg m. hollandaisesås</h3>
+              <p>Serveras med kokt potatis (innehåller laktos) </p>
+              <p class="pris">199kr</p>
+            </li>
+            <li>
+              <h3 class="precourse-head">Moules frites</h3>
+              <p>Serveras med pommes</p>
+              <p class="pris">169kr</p>
+            </li>
+            <li class="gluten">
+              <h3 class="precourse-head">Räkfrossa</h3>
+              <p>Serveras med vitlöksbröd och husets sallad (innehåller gluten)</p>
+              <p class="pris">199kr</p>
+            </li>
+            <li>
+              <h3 class="precourse-head">Havsabborre</h3>
+              <p>Serveras med roastad potatis</p>
+              <p class="pris">199kr</p>
+            </li>
+          </ul>
+        </div>
+        <div class="full-courses veg">
+          <h3>Huvudrätter - Vegetariskt</h3>
+          <ul>
+            <li>
+              <h3 class="precourse-head soja">Halloumiburgare</h3>
+              <p>Serveras med stekta rotfrukter (innehåller soja)</p>
+              <p class="pris">149kr</p>
+            </li>
+            <li>
+              <h3 class="precourse-head laktos">Halloumistroganoff</h3>
+              <p>Serveras med ris (innehåller laktos)</p>
+              <p class="pris">129kr</p>
+            </li>
+            <li>
+              <h3 class="precourse-head">Fylld paprika m. fetaost</h3>
+              <p>Serveras med ugnsrostade rotfrukter</p>
+              <p class="pris">199kr</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!--Div för tillbehör längst ner i menyn-->
+      <div class="sidedishes">
+        <h3>Tillbehör</h3>
+        <ul>
+          <li>Pommes</li>
+          <li>Potatisgratäng</li>
+          <li>Bearnaisesås</li>
+          <li>Rödvinssås</li>
+        </ul>
+      </div>
     </div>
-    <script src="main.js"></script>
-  </body>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="main.js"></script>
+</body>
 </html>
