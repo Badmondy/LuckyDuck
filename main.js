@@ -1,4 +1,4 @@
-// ARRAY för att spara response
+// ARRAY för att spara response HUVUDUTGÅNGSPUNKT
 let courses = [];
 
 // Array, för klickade allergier
@@ -7,7 +7,6 @@ let restrictAllergies = [];
 // Array, för allergier som ska tas bort från menyn.
 let toVanish = [];
 //Sorterade priser
-let sortedPrices = [];
 let sortedClicked = false;
 let sortedAsc = false;
 // Denier
@@ -15,20 +14,11 @@ let alreadyDisplayed = false;
 let isActive = false;
 //Olika meny sektioner 
 let starters = [];
-let starters2 = [];
 let main = [];
 let sides = [];
 let desert = [];
 
-// ALLERGI KNAPPAR
-
-let nutsActive = false;
-let glutenActive = false;
-// Knapp Din egna menu
-const customBtn = document.querySelector('#custom-Btn');
-
 // ON load
-
 window.onload = async function() {
    await readJson();
    customMenu();
@@ -43,13 +33,7 @@ const glutenBtn = document.getElementById('gluten');
 const fishBtn = document.getElementById('fish');
 const soyBtn = document.getElementById('soy');
 const lactoseBtn = document.getElementById('lactose');
-const backdropYes = document.querySelector('#backdrop-Btn');
-const backdropNo = document.querySelector('#removeBackDrop-Btn')
-const backdrop = document.querySelector('#backdrop');
-
-
 const showFullMenu = document.querySelector('#wholeMenu-Btn');
-
 
 
 // Standard färger!
@@ -57,65 +41,54 @@ const buttonOnClickColor = "rgba(255, 0, 0, 0.585)";
 const buttonDefaultColor = "#FFFFFF";
 
 
-//Event listeners 
 
-
-
-// Din egna meny
-/* customBtn.addEventListener('click',() => {
-    customMenu();
-}); */
 
 
 // Laddar om från början, "visa hela menyn".
-showFullMenu.addEventListener('click', () => {
+showFullMenu.addEventListener('click', async () => {
+   await readJson();
+    customMenu();
+    changeToDefualt();
 
-
-    window.location.reload();
 });
-
-// hämtar knapparna 
+// hämtar knapparna DESC ASC
 
 let ascBtnColor = document.querySelector('.asc');
 let descBtnColor = document.querySelector('.desc');
 
 
+//Event listeners 
 priceSortBtn.addEventListener('click', async () => {
     ascBtnColor.style.backgroundColor = 'red';
     descBtnColor.style.backgroundColor = 'white';
     await priceSortActive();
+    // Måste utredas varför två behövs?
     customMenu();
     customMenu();
+    //--------
 });
 
 priceSortBtnAsc.addEventListener('click', async () => {
     descBtnColor.style.backgroundColor = 'red';
     ascBtnColor.style.backgroundColor = 'white';
     await priceSortAsc();
+    // Måste utredas varför två behövs?
     customMenu();
     customMenu();
-
-  
-   
+    //--------
 });
 
 nutsBtn.addEventListener('click', async () => {
    
+    // Gör så att restricAllergies ej blir fylld i onödan.
     if(!restrictAllergies.includes('nuts')){
         restrictAllergies.push('nuts');
     }
-    
+
     customMenu();
     nutsBtn.style.backgroundColor = buttonOnClickColor;
-
-    
-  
-
-    
-   
-    
-
 });
+
 glutenBtn.addEventListener('click', async () => {
     
         if(!restrictAllergies.includes('gluten')){
@@ -124,8 +97,6 @@ glutenBtn.addEventListener('click', async () => {
    
         customMenu();
         glutenBtn.style.backgroundColor = buttonOnClickColor;
-
-  
 });
 
 fishBtn.addEventListener('click', () => {
@@ -144,7 +115,6 @@ soyBtn.addEventListener('click',  () => {
 
     customMenu();
     soyBtn.style.backgroundColor = buttonOnClickColor;
-   
 });
 
 lactoseBtn.addEventListener('click', () => {
@@ -156,6 +126,7 @@ lactoseBtn.addEventListener('click', () => {
     lactoseBtn.style.backgroundColor = buttonOnClickColor;
 });
 // ------ End of event listeners
+
 
 // Ändra färg till standard
 function changeToDefualt() {
@@ -184,22 +155,13 @@ async function readJson() {
                 
             });
         })
-
- 
-    
-
 }
-
-
-
-
-
 
 // Kollar allergier
 async function allergyChecker() {
         // el är förkortning på element
-        //kollar om användaren har lagt till något i restricallergies
-        // letar sedan match i alla courses.
+        // Kollar om användaren har lagt till något i restrictAllergies
+        // letar sedan match i alla courses[].
 
         for(const el in courses){
             if(restrictAllergies.some(item => courses[el].allergy.includes(item))) {
@@ -225,6 +187,7 @@ async function allergyChecker() {
 function sectionDivider(){
 
     for(const item in courses){
+
         if(courses[item].section == 'starters'){
             starters.push(courses[item]);
         }else if(courses[item].section == 'main'){
@@ -240,7 +203,9 @@ function sectionDivider(){
             console.log('NO SECTION');
         }
     }
+
 }
+// Ställer in och återställer Prissorteraren
 async function priceSortActive(){
     sortedClicked = true;
     sortedAsc = false;
@@ -254,8 +219,9 @@ async function priceSortAsc(){
 
    
 }
+
+
 async function customMenu() {
- 
     // Tar bort allergier
     allergyChecker();
     //Nollställer sektions!
@@ -271,9 +237,9 @@ async function customMenu() {
 
     //Delar upp i sektioner
     sectionDivider();
+
+    //Kollar vilken av prisSorteraren som ska aktiveras!
     await sorterWhichOne();
-   
-    
    
    // Kollar om content redan är aktivt.
     if(alreadyDisplayed){
@@ -284,35 +250,24 @@ async function customMenu() {
         displayMenu();
   
     }else{
-        
      displayMenu(); 
     }
-    //Återställer färger
-   /*  changeToDefualt(); */
-
 }
 
 function priceSorter() {
     
-    let sorter;
+  let sorter;
   sorter = courses.sort((a,b) => (a.price) > b.price ? 1 :-1);  
-
-
-   
 }
 
 function priceSorterAsc(){
    let sorter;
-
    sorter = courses.sort((b,a) => (b.price) > a.price ? -1 :1 );
-
-   
-
 }
 async function sorterWhichOne(){
-    if(sortedClicked && sortedAsc === false){
+    if(sortedClicked){
         priceSorter();
-    }else if(sortedAsc && sortedClicked === false){
+    }else if(sortedAsc){
         priceSorterAsc();
     }
     else{
@@ -320,6 +275,7 @@ async function sorterWhichOne(){
     }
 }
 
+// Bygger content i HTML
 async function displayMenu(){
  
    
@@ -332,13 +288,13 @@ async function displayMenu(){
    
     //Grund ul:lr
     let starterList = document.createElement('ul');
-    //Skapar grund listor!
+    
 
     
   
     // Loopar igenom alla maträtter i starters
     for(const item in starters){
-
+        //Skapar grund listor!
         var listRubric = document.createElement('li');
         var listDesc = document.createElement('li');
         var listAllergy = document.createElement('li');
