@@ -41,20 +41,22 @@ const buttonOnClickColor = "rgba(255, 0, 0, 0.585)";
 const buttonDefaultColor = "#FFFFFF";
 
 
-
-
+// hämtar knapparna DESC ASC
+let ascBtnColor = document.querySelector('.asc');
+let descBtnColor = document.querySelector('.desc');
 
 // Laddar om från början, "visa hela menyn".
 showFullMenu.addEventListener('click', async () => {
    await readJson();
     customMenu();
     changeToDefualt();
+    ascBtnColor.style.backgroundColor = 'white';
+    descBtnColor.style.backgroundColor = 'white';
 
 });
-// hämtar knapparna DESC ASC
 
-let ascBtnColor = document.querySelector('.asc');
-let descBtnColor = document.querySelector('.desc');
+
+
 
 
 //Event listeners 

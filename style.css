@@ -111,21 +111,24 @@ body {
 }
 
 .sortStuff{
-  position: absolute;
   min-width:100%;
   display:flex;
-  left:4em;
-  top:21em;
   gap:1em;
-  
+  padding:2%;
+  align-items: center;
+}
+
+.sortStuff p{
+  align-self:center;
+  font-size:110%;
 }
 
 .sortStuff button{
   display:flex;
   justify-content: center;
   align-items: center;
-background-color: white;
-padding:2%;
+  background-color: white;
+  padding:2%;
 }
 
 
@@ -159,6 +162,7 @@ padding:2%;
 /*ccs för logo*/
 .upper-left img {
   width: 50%;
+  
 }
 /*css för övre halvan av menyn*/
 
@@ -178,8 +182,10 @@ padding:2%;
 }
 .upper-left {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  position: relative;
+  bottom:2.5em;
+  right:1em;
+  justify-content: center;
   align-self: flex-start;
   flex-wrap: wrap;
 }
@@ -188,7 +194,7 @@ padding:2%;
   margin-top: 1%;
   background-color: rgba(157, 215, 82, 0.394);
   min-width: 100%;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   padding: 5%;
   box-shadow: inset  rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -266,6 +272,7 @@ padding:2%;
   align-items: center;
   background-color: antiquewhite;
   min-width:100%;
+  padding:5%;
   justify-content: center;
   box-shadow: inset  rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
