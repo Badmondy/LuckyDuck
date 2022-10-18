@@ -21,17 +21,15 @@
     <!-- Grund för meny-->
     <!--div för flexbox för hela sidan-->
     <div class="entire-content">
-      <div id="backdrop">
-        <div id="info">
-          <p>Vill du få hela menyn?</p>
-          <button id="backdrop-Btn">Ja</button>
-          <button id="removeBackDrop-Btn">Nej</button>
-          
-        </div>
+      <div class="sortStuff">
+        <button class="myButton asc" id="priceSorter"><i class="fa-solid fa-sort-up fa-xl"></i></i></button>
+      <button class="myButton desc" id="priceSorterAsc"><i class="fa-solid fa-sort-down fa-xl"></i></button> 
       </div>
+      
       <h1 class="company-name">
         Lucky Duck
         <img src="./bilder/duck.png" alt="happyduck" />
+        
       </h1>
       <!--div för checkbox/preferensval för användare-->
       <div class="preference-check">
@@ -45,15 +43,14 @@
         </div>
         <!--knapp för trycka på för få upp sin egenskapade meny-->
         <!--Särsiljer knapparna med att lägga till class-->
-        <button class="myButton menu-button" id="custom-Btn">
-          Din egna meny
-        </button>
-        <button class="myButton menu-button asc" id="priceSorter">Sortera Stigande</button>
-      <button class="myButton menu-button desc" id="priceSorterAsc">Sortera Fallande</button>
-        <br>
-        <br>
         <button class="myButton menu-button" id="wholeMenu-Btn"> Visa hela menyn</button>
-       
+        <!-- <button class="myButton menu-button" id="custom-Btn">
+          Din egna meny
+        </button> -->
+   
+         
+   
+    
       </div>
       <!--Div för hela menyn-->
       <div class="entire-menu">
@@ -80,7 +77,9 @@
           <!-- En wrapper för att kontrollera innehåll i förätter-->
           <div class="upper-inner-wrapper">
             <h4>Förätter</h4>
-            <div class="upper-inner"></div>
+            <div class="upper-inner">
+              
+            </div>
           </div>
         </div>
 

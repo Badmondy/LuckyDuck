@@ -20,6 +20,10 @@ let main = [];
 let sides = [];
 let desert = [];
 
+// ALLERGI KNAPPAR
+
+let nutsActive = false;
+let glutenActive = false;
 // Knapp Din egna menu
 const customBtn = document.querySelector('#custom-Btn');
 
@@ -56,21 +60,11 @@ const buttonDefaultColor = "#FFFFFF";
 //Event listeners 
 
 
-// Backdrop-btn
-backdropYes.addEventListener('click', () => {
-    console.log('yes');
-    backdrop.style.display = "none";
-    displayMenu();
-    
-});
-backdropNo.addEventListener('click', () =>{
-    console.log('no');
-    backdrop.style.display = "none";
-});
-
 
 // Din egna meny
-customBtn.addEventListener('click', customMenu);
+/* customBtn.addEventListener('click',() => {
+    customMenu();
+}); */
 
 
 // Laddar om från början, "visa hela menyn".
@@ -86,45 +80,60 @@ let ascBtnColor = document.querySelector('.asc');
 let descBtnColor = document.querySelector('.desc');
 
 
-priceSortBtn.addEventListener('click', () => {
+priceSortBtn.addEventListener('click', async () => {
     ascBtnColor.style.backgroundColor = 'red';
     descBtnColor.style.backgroundColor = 'white';
-    console.log('Cliked 1');
-    priceSortActive();
+    await priceSortActive();
+    customMenu();
     customMenu();
 });
 
-priceSortBtnAsc.addEventListener('click', () => {
+priceSortBtnAsc.addEventListener('click', async () => {
     descBtnColor.style.backgroundColor = 'red';
     ascBtnColor.style.backgroundColor = 'white';
-    console.log('clicked 2');
-    priceSortAsc();
+    await priceSortAsc();
     customMenu();
+    customMenu();
+
+  
+   
 });
 
-nutsBtn.addEventListener('click', () => {
+nutsBtn.addEventListener('click', async () => {
+   
     if(!restrictAllergies.includes('nuts')){
         restrictAllergies.push('nuts');
     }
-  
+    
+    customMenu();
     nutsBtn.style.backgroundColor = buttonOnClickColor;
 
-});
+    
+  
 
-glutenBtn.addEventListener('click', () => {
     
-    if(!restrictAllergies.includes('gluten')){
-        restrictAllergies.push('gluten');
-    }
+   
     
-    glutenBtn.style.backgroundColor = buttonOnClickColor;
+
+});
+glutenBtn.addEventListener('click', async () => {
+    
+        if(!restrictAllergies.includes('gluten')){
+            restrictAllergies.push('gluten');
+        }
+   
+        customMenu();
+        glutenBtn.style.backgroundColor = buttonOnClickColor;
+
+  
 });
 
 fishBtn.addEventListener('click', () => {
     if(!restrictAllergies.includes('fish')){
         restrictAllergies.push('fish');
     }
-    
+
+    customMenu();
     fishBtn.style.backgroundColor = buttonOnClickColor;
 });
 
@@ -132,7 +141,8 @@ soyBtn.addEventListener('click',  () => {
     if(!restrictAllergies.includes('soy')){
         restrictAllergies.push('soy');
     }
-   
+
+    customMenu();
     soyBtn.style.backgroundColor = buttonOnClickColor;
    
 });
@@ -141,7 +151,8 @@ lactoseBtn.addEventListener('click', () => {
     if(!restrictAllergies.includes('lactose')){
         restrictAllergies.push('lactose');
     }
-   
+
+    customMenu();
     lactoseBtn.style.backgroundColor = buttonOnClickColor;
 });
 // ------ End of event listeners
@@ -185,7 +196,7 @@ async function readJson() {
 
 
 // Kollar allergier
-function allergyChecker() {
+async function allergyChecker() {
         // el är förkortning på element
         //kollar om användaren har lagt till något i restricallergies
         // letar sedan match i alla courses.
@@ -230,21 +241,21 @@ function sectionDivider(){
         }
     }
 }
-function priceSortActive(){
+async function priceSortActive(){
     sortedClicked = true;
     sortedAsc = false;
 
     
 }
 
-function priceSortAsc(){
+async function priceSortAsc(){
     sortedAsc = true;
     sortedClicked = false;
 
    
 }
 async function customMenu() {
-
+ 
     // Tar bort allergier
     allergyChecker();
     //Nollställer sektions!
@@ -260,7 +271,7 @@ async function customMenu() {
 
     //Delar upp i sektioner
     sectionDivider();
-    sorterWhichOne();
+    await sorterWhichOne();
    
     
    
@@ -298,19 +309,14 @@ function priceSorterAsc(){
    
 
 }
-
-function clearOldData(){
-    let starterDelete = document.querySelector('.upper-inner');
-    starterDelete.replaceChildren();
-}
-function sorterWhichOne(){
+async function sorterWhichOne(){
     if(sortedClicked && sortedAsc === false){
         priceSorter();
     }else if(sortedAsc && sortedClicked === false){
         priceSorterAsc();
     }
     else{
-        return console.log('inget av dem');
+        return console.log();
     }
 }
 
