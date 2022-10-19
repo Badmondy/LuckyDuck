@@ -1,0 +1,131 @@
+[
+    {
+        "id": 1,
+        "titel": "Entrecoté med klyftpotatis och rostade pinjenötter",
+        "desc": "Lokala råvaror från Hembyggdens gård med slungad klyftpotatis samt säsongens primörer",
+        "allergy": "nuts",
+        "section":"main",
+        "price": 310
+    },
+ 
+    {
+        "id": 2,
+        "titel": "Hamburgare från granngården",
+        "desc": "250gram angus beef, med klyftpotatis med husets sås",
+        "allergy": "soy",
+        "section":"main",
+        "price": 275
+    },
+    
+
+    {
+        "id": 3,
+        "titel": "Torskfilé med hasselbackpotatis",
+        "desc": "Hasselbackspotatis med havsalt samt säsongens primörer",
+        "allergy": "fish",
+        "section":"main",
+        "price": 198
+    },
+    {
+        "id": 4,
+        "titel": "Linssoppa med hembakat äppelbörd",
+        "desc": "Brödet är bakat hos oss med linser odlade i våran trädgård",
+        "allergy": "gluten",
+        "section": "main",
+        "price": 189
+    },
+    {
+        "id":5,
+        "titel": "Grönsaksgratäng",
+        "desc": "Med potatis och tomat med en kall sallad till",
+        "allergy": "",
+        "section": "main",
+        "price": 120
+    },
+    {
+        "id":6,
+        "titel": "Våra egna Pannkakor",
+        "desc": "Vaniljglass och nyplockade bär",
+        "allergy": "gluten",
+        "section": "desert",
+        "price": 99
+    },
+
+    {
+        "id":7,
+        "titel": "Chokladkaka med chokladsås och färska bär",
+        "desc" : "Sprinklad med rostade hasselnötter",
+        "allergy": "nuts",
+        "section": "desert",
+        "price": 110
+
+    },
+
+    {
+        "id":8,
+        "titel": "Cheesecake fri från nötter och gluten",
+        "desc": "Färska bär och extra crunch",
+        "allergy": "",
+        "section": "desert",
+        "price": 110
+
+    },
+    {
+        "id":9,
+        "titel": "Morotskaka",
+        "desc": "Morötter plockade i våran trädgård fri från gluten",
+        "allergy": "nuts",
+        "section": "desert",
+        "price": 99
+    },
+    {
+        "id": 10,
+        "titel": "Ugnsbakade rödbeter med chevré och valnötter",
+        "desc": "Ekologiskt odlade rödbeter med krämig chevré från Hallands mejeri",
+        "allergy":"nuts",
+        "section":"starters",
+        "price": 115
+    },
+    {
+        "id": 11,
+        "titel": "Svensk skaldjurstallrik",
+        "desc": "Fylld med alla havets läckerheter",
+        "allergy": "fish",
+        "section": "starters",
+        "price": 150
+    },
+    {
+        "id":12,
+        "titel": "Svampsoppa från de svenska skogarna",
+        "desc": "Handplockad svamp serveras med nybakat bröd",
+        "allergy": "",
+        "section":"starters",
+        "price": 99
+    },
+    {
+        "id": 13,
+        "titel": "Whiskey kokad havreflarn",
+        "desc": "Hemmbakade flarn med mjöl från granngården",
+        "allergy": "gluten",
+        "section": "desert",
+        "price": 99
+    },
+    {
+        "id": 14,
+        "titel": "Kantarelltoast",
+        "desc": "Vedugnsbakat bröd med säsongens kantareller",
+        "allergy": "gluten",
+        "section": "starters",
+        "price": 110
+
+    },
+    {
+        "id": 15,
+        "titel": "Buratta med kantareller, dill och brynt smör",
+        "desc": "Säsongens kantareller med egenodlad dill",
+        "allergy": "soy",
+        "section": "starters",
+        "price": 100
+    }
+ 
+]

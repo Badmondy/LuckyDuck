@@ -1,189 +1,297 @@
 /*import av fonts från google.fonts*/
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;900&family=Ubuntu:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;900&family=Ubuntu:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap");
 /*reset för samtliga element*/
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
-    text-align: center;
-  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
 }
 
 /*css för diven som täcker hela innehållet*/
 h1,
 h3 {
-    font-family: 'Ubuntu', sans-serif;
-    color:#666
+  font-family: "Ubuntu", sans-serif;
+  color: #666;
 }
-ul{
-    margin-top:10px;
+ul {
+  margin-top: 10px;
 }
-ul li{
-    list-style: none;
-    color: black;
+ul li {
+  list-style: none;
+  color: black;
 }
 body {
-    background-image: url(bilder/food.jpeg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    /*Ändrade min height till vh istället*/
-    min-height:100vh;
+  background-image: url(bilder/food.jpeg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /*Ändrade min height till vh istället*/
+  min-height: 100vh;
 }
-.company-name{
-    display:flex;
-    min-width:100%;
-    text-align: center;
-    justify-content: center;
-    gap:.5em;
-    font-family: 'Amatic SC', cursive;
+/*Huvudrubrik*/
+.company-name {
+  display: flex;
+  min-width: 100%;
+  text-align: center;
+  justify-content: center;
+  gap: 0.5em;
+  font-family: "Amatic SC", cursive;
 }
-.company-name img{
-    width:5%;
+.company-name img {
+  width: 5%;
 }
+/*Hela menyn*/
 .entire-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    align-self: center;
-    background-color: white;
-    margin: 5% 15%;
-    padding: 2% 0;
-    min-height:60vh;
-    box-shadow: rgba(0, 0, 0.5, 1.35) 0px 5px 15px;
-    border-radius: 14px;
-    flex-wrap: wrap;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: center;
+  background-color: white;
+  min-width: 80%;
+  margin: 2em 2em;
+  padding: 2% 0;
+  box-shadow: rgba(0, 0, 0.5, 1.35) 0px 5px 15px;
+  border-radius: 14px;
+  flex-wrap: wrap;
 }
 
-/*css  innehåller checkbox och btn*/
-
+/*css  innehåller Preferenser och btn*/
 
 .preference-check {
-    display: flex;
-    flex-direction: column;
-    padding: 2%;
+  display: flex;
+  flex-direction: column;
+  padding: 2%;
 }
-.allergyCard{
-    display:flex;
-    gap:.5em;
-    flex:1;
-    min-width:10%;
-    font-size:80%;
-    justify-content: center;
-    background-color: rgb(251, 251, 249);
-    border-radius:.3em;
-    align-items: center;
-    padding:.5%;
-    box-shadow: rgba(0, 0, 0, 0.222) 0px 3px 8px;
-    
+.allergyCard {
+  display: flex;
+  gap: 0.5em;
+  flex: 1;
+  min-width: 10%;
+  font-size: 80%;
+  justify-content: center;
+  background-color: rgb(251, 251, 249);
+  border-radius: 0.3em;
+  align-items: center;
+  padding: 0.5%;
+  box-shadow: rgba(0, 0, 0, 0.222) 0px 3px 8px;
 }
 
-.allergyCard h4{
-    color:rgba(255, 0, 0, 0.585);
-
+.allergyCard h4 {
+  color: rgba(255, 0, 0, 0.585);
 }
 .allergy {
-    font-size:1.5em;
-    user-select: none;
-    padding:.6%;
+  font-size: 1.5em;
+  user-select: none;
+  padding: 0.6%;
 }
 
-
-.allergy:hover{
-    background-color: rgba(226, 46, 43, 0.694);
-    border-radius:.3rem;
-    transition:0.8s;
-    
+.allergy:hover {
+  background-color: rgba(226, 46, 43, 0.694);
+  border-radius: 0.3rem;
+  transition: 0.8s;
 }
-
+.sortPriceDivider{
+  display:flex;
+  margin-top:1em;
+  gap:1em;
+  justify-items: center;
+  flex-direction: column;
+}
 .myButton {
-    border:none;
-    background-color:rgb(240,196,25);
-    padding:.5%;
-    color:black;
-    font-family: 'Ubuntu', sans-serif;
-    border-radius:.3em;
-    
-    box-shadow: rgba(0, 0, 0, 0.43) 0px 3px 8px;
-
+  border: none;
+  background-color: rgb(240, 196, 25);
+  padding: 3.5%;
+  color: black;
+  font-family: "Ubuntu", sans-serif;
+  border-radius: 0.3em;
+  box-shadow: rgba(0, 0, 0, 0.43) 0px 3px 8px;
 }
 
-.myButton.menu-button{
-    margin-top:1%;
-    min-width:30%;
-
-    align-self:center;
-    
-}
-.myButton.desert-button{
-    min-width:30%;
-    padding:3.5%;
+.sortStuff{
+  min-width:100%;
+  display:flex;
+  gap:1em;
+  padding:2%;
+  align-items: center;
 }
 
-.myButton:hover {
-    background: linear-gradient(to bottom, #e9e9e9 5%, #f9f9f9 100%);
-    background-color: #e9e9e9;
+.sortStuff p{
+  align-self:center;
+  font-size:110%;
+}
+
+.sortStuff button{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  padding:2%;
+}
+
+
+
+
+.myButton.menu-button {
+  margin-top: 1%;
+  min-width: 30%;
+
+  align-self: center;
+}
+
+
+.myButton.menu-button:hover {
+  background: linear-gradient(to bottom, #e9e9e9 5%, #f9f9f9 100%);
 }
 
 .myButton:active {
-    position: relative;
-    top: 1px;
+  position: relative;
+  top: 1px;
+}
+
+/*Starta om menyn*/
+.fa-arrows-rotate{
+  color:green;
+  position: relative;
+  left:40%;
+  
 }
 
 /*ccs för logo*/
-.upper-left img{
-    width:50%;
+.upper-left img {
+  width: 50%;
+  
 }
 /*css för övre halvan av menyn*/
 
-.entire-menu{
-    display:flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+.entire-menu {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
-.upper-menu{
-    display:flex;
-    flex-direction: row;
-    align-items: center;
-    text-align:center;
-    flex-wrap: wrap;
-    
+.upper-menu {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 80%;
 }
-.upper-left{
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    flex-wrap: wrap;
+.upper-menu li {
+  text-align: center;
+  list-style-type: none;
 }
-.upper-inner{
-    display:flex;
-    flex-direction: column;
-    padding-left:37%;
-    flex-wrap: wrap;
+.upper-left {
+  display: flex;
+  position: relative;
+  bottom:2.5em;
+  right:1em;
+  justify-content: center;
+  align-self: flex-start;
+  flex-wrap: wrap;
 }
-.our-values{
-    text-align: center;
-    padding-top:3%;
-}
-/*css för huvudmenyn*/
-.main-courses{
-    display: flex;
-    align-items: center;
-
-}
-.full-courses{
-    padding:20px 40px ;
+.upper-inner-wrapper {
+  display: flex;
+  margin-top: 1%;
+  background-color: rgba(157, 215, 82, 0.394);
+  min-width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 5%;
+  box-shadow: inset  rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  gap: 1.5em;
+  line-height: 1.8em;
 }
 
+.upper-inner-wrapper h4 {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  font-size: 200%;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+.course-rubric {
+  font-size: 110%;
+  font-style: italic;
+  color: rgba(17, 16, 15, 0.686);
+  font-weight: 700;
+}
+.course-desc {
+  font-style: italic;
+  color: rgb(0, 0, 0);
+}
+.course-allergies {
+  color: rgba(255, 0, 0, 0.587);
+  font-weight: 700;
+  font-size: 80%;
+}
 
-/*css för tillbehör*/
-.sidedishes{
-    display:flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    padding-right:50px;
-    flex-wrap: wrap;
+.course-price {
+  color: rgb(130, 123, 123);
+  font-size: 150%;
+  font-style: italic;
+}
+.our-values {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  font-size: 110%;
+  text-align: center;
+  padding-top: 3%;
+}
+.fa-tree {
+  color: green;
+}
+
+/*css för huvudrätter*/
+.main-courses {
+  display: flex;
+  align-items: center;
+  box-shadow: inset  rgba(0, 0, 0, 0.24) 0px 3px 8px; 
+}
+.main-courses h4 {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  font-size: 200%;
+  font-weight: 400;
+  margin:0;
+  margin-left:20%;
+  text-transform: uppercase;
+}
+
+.full-courses {
+  align-self:center;
+  padding:5%;
+  gap: 1.5em;
+  line-height: 1.8em;
+}
+
+
+/*css för efterätter*/
+.desert-wrapper {
+  display: flex;
+  align-items: center;
+  background-color: antiquewhite;
+  min-width:100%;
+  padding:5%;
+  justify-content: center;
+  box-shadow: inset  rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.desert-wrapper h4 {
+  position: relative;
+  writing-mode: horizontal-tb;
+  text-orientation: upright;
+  font-size: 200%;
+  font-weight: 400;
+  padding:1%;
+  text-transform: uppercase;
+}
+
+.desert{
+  align-self:center;
+  text-align:center;
+  gap: 1.5em;
+  line-height: 1.8em;
+}
+.fa-cookie-bite{
+  color:rgb(218, 43, 192);
 }
